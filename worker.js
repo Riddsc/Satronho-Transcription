@@ -16,7 +16,7 @@ self.addEventListener('message', async (event) => {
             
             // Descargamos el modelo whisper-tiny. 
             // Esto almacena el modelo en la memoria caché del navegador automáticamente.
-            transcriber = await pipeline('automatic-speech-recognition', 'Xenova/whisper-tiny');
+            transcriber = await pipeline('automatic-speech-recognition', 'Xenova/whisper-small');
             
             self.postMessage({ status: 'ready' });
         } catch (error) {
