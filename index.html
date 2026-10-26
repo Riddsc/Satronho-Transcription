@@ -2,37 +2,43 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transcriptor IA Local</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Transcriptor Pro Nativo</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <main class="container">
         <header>
-            <h1>Transcriptor IA 🧠</h1>
-            <p>100% Privado y Offline (Español e Inglés)</p>
+            <h1>Transcriptor Pro 🎙️</h1>
+            <p>Precisión Extrema: Español e Inglés</p>
         </header>
 
-        <section class="status-panel">
-            <div id="status-indicator">🔴 Esperando cargar el modelo...</div>
+        <section class="config-panel">
+            <label for="language-select">Idioma de la conversación:</label>
+            <select id="language-select">
+                <option value="es-ES" selected>Español (España / LATAM)</option>
+                <option value="en-US">Inglés (Estados Unidos)</option>
+            </select>
         </section>
 
         <section class="controls">
-            <!-- Botón para descargar/cargar el modelo en la memoria -->
-            <button id="btn-load" class="btn primary">Cargar Cerebro IA</button>
-            <button id="btn-record" class="btn danger" disabled>🎙️ Grabar</button>
-            <button id="btn-stop" class="btn secondary" disabled>⏹️ Detener</button>
+            <button id="btn-record" class="btn primary">Iniciar Transcripción</button>
+            <button id="btn-stop" class="btn danger" disabled>Detener</button>
+            <button id="btn-clear" class="btn secondary">Limpiar Texto</button>
+        </section>
+
+        <section class="status-panel">
+            <div id="status-indicator">🔴 Inactivo</div>
         </section>
 
         <section class="output-panel">
-            <h2>Transcripción:</h2>
             <div id="transcript-box" class="transcript-box">
-                Aquí aparecerá tu texto...
+                <span id="final-text"></span>
+                <span id="interim-text" class="interim"></span>
             </div>
         </section>
     </main>
 
-    <!-- Usamos type="module" porque usamos JS moderno -->
-    <script type="module" src="app.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
