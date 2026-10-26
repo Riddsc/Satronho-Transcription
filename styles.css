@@ -1,0 +1,98 @@
+:root {
+    --bg-color: #f4f4f9;
+    --text-color: #333;
+    --primary-color: #3b82f6;
+    --danger-color: #ef4444;
+    --secondary-color: #6b7280;
+    --box-bg: #ffffff;
+    --border-radius: 12px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #111827;
+        --text-color: #f9fafb;
+        --box-bg: #1f2937;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+header {
+    text-align: center;
+}
+
+.status-panel {
+    background-color: var(--box-bg);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    color: white;
+    min-height: 44px; /* Estándar táctil */
+    transition: opacity 0.2s, transform 0.1s;
+    flex-grow: 1;
+}
+
+.btn:active:not(:disabled) {
+    transform: scale(0.95);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.primary { background-color: var(--primary-color); }
+.danger { background-color: var(--danger-color); }
+.secondary { background-color: var(--secondary-color); }
+
+.transcript-box {
+    background-color: var(--box-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    min-height: 150px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    white-space: pre-wrap;
+    line-height: 1.6;
+}
